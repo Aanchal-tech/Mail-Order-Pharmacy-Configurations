@@ -1,0 +1,48 @@
+authservice:
+  client:
+    name: authentication
+    url: http://localhost:8090/authapp
+drugservice:
+  client:
+    name: drug-service
+    url: http://localhost:8081/drugdetailapp
+logging:
+  level:
+    com:
+      mailorderpharma:
+        subscription: debug
+    org:
+      hibernate:
+        SQL: trace
+        type:
+          descriptor:
+            sql: trace
+      springframework: info
+    web: debug
+  pattern:
+    console: '%d{dd-MM-yy} %d{HH:mm:ss.SSS} %-20.20thread %5p %-25.25logger{25} %25M
+      %4L %m%n '
+refillservice:
+  client:
+    name: refillapp
+    url: http://localhost:8454/refillapp
+server:
+  error:
+    include-stacktrace: never
+  port: 8082
+  servlet:
+    context-path: /subscriptionapi
+spring:
+  application:
+    name: subscription-service
+  datasource:
+    driverClassName: org.h2.Driver
+    initialization-mode: always
+    password: ''
+    url: jdbc:h2:mem:subscriptiondb
+    username: sa
+  h2:
+    console:
+      enabled: true
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
