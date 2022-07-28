@@ -2,8 +2,6 @@ server:
   port: 8048
 
 spring:
-  application:
-    name: api-gateway
   cloud:
     gateway:
       routes:
