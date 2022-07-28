@@ -10,10 +10,8 @@ spring:
         predicates:
         - Path=/authapp/**
         uri: http://localhost:8090/
-      - id:
-        - drug-service
+      - id: drug-service
         predicates:
-        - - Path=drugdetailapp/**
-        uri:
-        - http://localhost:8081/
+        - Path=drugdetailapp/**
+        uri: http://localhost:8081/
 
