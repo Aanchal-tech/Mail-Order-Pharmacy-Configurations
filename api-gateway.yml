@@ -2,3 +2,39 @@ server:
   port: 8048
 
 
+
+
+      routes:
+      - id: auth-service
+        uri:
+          http://localhost:8090
+        predicates:
+        - Path=/auth-service/**
+        filters:
+        - StripPrefix=1
+      - id: drug-service
+        uri:
+          http://localhost:8081
+        predicates:
+        - Path=/drug-service/** 
+        filters:
+        - StripPrefix=1        
+      - id: refill-service
+        uri: 
+          http://localhost:8454
+        predicates:
+        - Path=/refill-service/** 
+        filters:
+        - StripPrefix=1              
+      - id: subscription-service
+        uri:
+          http://localhost:8082
+        predicates:
+        - Path=/subscription-service/**
+        filters:
+        - StripPrefix=1
+
+        
+      default-filters:
+        - DedupeResponseHeader=Access-Control-Allow-Origin Access-Control-Allow-Credentials, RETAIN_UNIQUE
+
