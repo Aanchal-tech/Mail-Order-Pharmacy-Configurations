@@ -1,13 +1,4 @@
 server:
   port: 8048
-spring:
-  application:
-    name: mail-order-pharmacy
-  cloud:
-    gateway:
-      routes:
-      - id: drug-service
-        predicates:
-        - Path=drugdetailapp/**
-        uri: http://localhost:8081/
+
 
